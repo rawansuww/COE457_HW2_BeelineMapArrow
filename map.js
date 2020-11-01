@@ -36,11 +36,12 @@ function onLocationFound(e) {
             }).addTo(map);
 
     
+         //POST method to the server to send all the 4 coordinates in JSON format   
         info = JSON.stringify({'current1': startlat, 'current2': startlng, 'end1': endlat, 'end2':endlong});
         $.post( "http://localhost:8080/", info);
         console.log("DATA passed");
  })
 }
 
-map.on('locationfound', onLocationFound);
+map.on('locationfound', onLocationFound); //turn on map and detect location by default
 
